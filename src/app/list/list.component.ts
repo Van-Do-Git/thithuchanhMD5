@@ -9,6 +9,7 @@ import {Book} from "../model/book";
 })
 export class ListComponent implements OnInit {
   books:any;
+  count:any;
   constructor(private service : BookService) {
 
   }
@@ -19,8 +20,9 @@ export class ListComponent implements OnInit {
 
   private showAll() {
     this.service.showAll().subscribe(listBook =>{
-      this.books = listBook
-      console.log(this.books)
+      this.books = listBook;
+      this.count = this.books.length;
+      console.log(this.count)
     })
   }
 

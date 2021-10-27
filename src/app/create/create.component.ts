@@ -22,7 +22,8 @@ export class CreateComponent implements OnInit {
   onSubmit() {
     console.log(this.formdata.value)
     this.service.createBook(this.formdata.value).subscribe(()=>{
-      this.alert="Tạo mới thành công"!
+      this.alert="Tạo mới thành công"!;
+      this.formdata.reset();
     })
   }
 

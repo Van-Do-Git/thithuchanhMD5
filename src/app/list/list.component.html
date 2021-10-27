@@ -1,6 +1,8 @@
 <h1>Danh sách các cuốn sách</h1>
 
-<table>
+<p>Số lượng sách là : {{count}}</p>
+<table class="table">
+  <thead class="table-dark">
   <tr>
     <td>STT</td>
     <td>Tiêu đề</td>
@@ -8,11 +10,18 @@
     <td>Sửa</td>
     <td>Xóa</td>
   </tr>
+  </thead>
+
   <tr *ngFor="let book of books; index as i">
     <td>{{i + 1}}</td>
     <td [routerLink]="['/detail/',book.id]">{{book.title}}</td>
     <td>{{book.author}}</td>
-    <td><button [routerLink]="['/edit/',book.id]">Sửa</button></td>
-    <td><button (click)="delete(book.id)">Xóa</button></td>
+    <td>
+      <button [routerLink]="['/edit/',book.id]" class="btn btn-warning">Sửa</button>
+    </td>
+    <td>
+      <button (click)="delete(book.id)" class="btn btn-outline-danger">Xóa</button>
+    </td>
   </tr>
 </table>
+<button [routerLink]="['/create/']" class="btn btn-outline-primary" style="position: relative; left: 638px">Thêm mới book</button>

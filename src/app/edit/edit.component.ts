@@ -18,9 +18,9 @@ export class EditComponent implements OnInit {
   }
 
   public formdata = this.formBuilder.group({
-    title: [''],
-    author: [''],
-    description: ['']
+    title: ['',Validators.required],
+    author: ['',Validators.required],
+    description: ['',Validators.required]
   })
 
   ngOnInit(): void {

@@ -10,6 +10,7 @@ import {Book} from "../model/book";
 })
 export class DetailComponent implements OnInit {
   book = new Book(0,'','','');
+  alert = '';
   constructor( private atRouter: ActivatedRoute, private service: BookService) { }
 
   ngOnInit(): void {
@@ -17,6 +18,7 @@ export class DetailComponent implements OnInit {
       const id = param.get('id');
       this.service.detailBook(Number(id)).subscribe(book => {
         this.book = book;
+
       })
     })
   }

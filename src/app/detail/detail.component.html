@@ -1,15 +1,17 @@
-<p>Chi tiết </p>
-<table>
+<h1>Chi tiết </h1>
+<hr>
+<table class="table table-bordered border-primary">
+  <thead class="table-dark">
   <tr>
-    <td>Tiêu đề</td>
-    <td>Tác Giả</td>
-    <td>Mô tả</td>
-
+    <td class="tieude">Tiêu đề</td>
+    <td class="tacgia">Tác Giả</td>
+    <td class="mota">Mô tả</td>
   </tr>
+  </thead>
   <tr >
-    <td>{{book.title}}</td>
-    <td>{{book.author}}</td>
-    <td>{{book.description}}</td>
+    <td class="tieude">{{book.title}}</td>
+    <td class="tacgia">{{book.author}}</td>
+    <td class="mota">{{book.description}}</td>
   </tr>
 </table>
-<button type="submit" routerLink="/">Quay lại</button>
+<button type="submit" routerLink="/" class="btn btn-primary" style="position: relative; left: 638px">Quay lại</button>
