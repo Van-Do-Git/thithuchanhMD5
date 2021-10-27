@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <p *ngIf="alert">{{alert}}</p>
+    <div class="col-12" style="margin-top: 20px">
+      <form [formGroup]="formdata" (ngSubmit)="onSubmit()">
+        <label>
+          Tiêu đề:
+          <input type="text" formControlName="title"  >
+        </label>
+        <label>
+          Tác giả
+          <input type="text" formControlName="author" >
+        </label>
+        <label>
+          Mô tả
+          <input type="text" formControlName="description">
+        </label>
+        <button type="submit" [disabled]="!formdata.valid">Submit</button>
+      </form>
+    </div>
+    <button type="submit" routerLink="/">Quay lại</button>
+  </div>
+</div>
