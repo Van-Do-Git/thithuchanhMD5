@@ -1,1 +1,27 @@
+<mat-toolbar color="primary" class="nav-height">
+  <mat-toolbar-row>
+    <button mat-icon-button >
+      <mat-icon (click)="openLeftSide()">menu</mat-icon>
+    </button>
+    <h1 class="example-spacer">Quản lý Sách</h1>
+    <div >
+      <a mat-button [routerLink]="['/']" >
+        <mat-icon mat-list-icon>home</mat-icon> Home
+      </a>
+      <a mat-button [routerLink]="['/create/']" >
+        <mat-icon mat-list-icon>create</mat-icon> Thêm mới sách
+      </a>
+      <button mat-button >
+        <mat-icon>folder_shared</mat-icon> Số lượng
+      </button>
+      <button mat-button
+              [routerLink]="['']"
+              [routerLinkActive]="''" >
+        <mat-icon>person</mat-icon> Vài Nét
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
 <router-outlet></router-outlet>
+
+

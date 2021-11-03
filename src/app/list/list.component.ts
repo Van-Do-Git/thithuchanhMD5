@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {BookService} from "../book.service";
-import {Book} from "../model/book";
+
 
 @Component({
   selector: 'app-list',
@@ -8,21 +8,20 @@ import {Book} from "../model/book";
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  books:any;
-  count:any;
+  books?:any;
+  @Output() newItemEvent = new EventEmitter<string>();
   constructor(private service : BookService) {
 
   }
 
   ngOnInit(): void {
-    this.books = this.showAll();
+    this.showAll();
   }
 
   private showAll() {
     this.service.showAll().subscribe(listBook =>{
       this.books = listBook;
-      this.count = this.books.length;
-      console.log(this.count)
+      this.newItemEvent.emit(this.books.length)
     })
   }
 

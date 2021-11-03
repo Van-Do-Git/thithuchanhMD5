@@ -1,6 +1,5 @@
 <h1>Danh sách các cuốn sách</h1>
 
-<p>Số lượng sách là : {{count}}</p>
 <table class="table">
   <thead class="table-dark">
   <tr>
@@ -17,11 +16,10 @@
     <td [routerLink]="['/detail/',book.id]">{{book.title}}</td>
     <td>{{book.author}}</td>
     <td>
-      <button [routerLink]="['/edit/',book.id]" class="btn btn-warning">Sửa</button>
+      <button [routerLink]="['/edit/',book.id]" class="btn btn-warning"><mat-icon>edit</mat-icon></button>
     </td>
     <td>
-      <button (click)="delete(book.id)" class="btn btn-outline-danger">Xóa</button>
+      <button (click)="delete(book.id)" class="btn btn-outline-danger"><mat-icon>delete</mat-icon></button>
     </td>
   </tr>
 </table>
-<button [routerLink]="['/create/']" class="btn btn-outline-primary" style="position: relative; left: 638px">Thêm mới book</button>

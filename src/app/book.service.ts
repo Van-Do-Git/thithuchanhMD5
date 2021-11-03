@@ -11,7 +11,7 @@ export class BookService {
   private API_BOOK = environment.API_LOCAL;
   constructor(private http: HttpClient) { }
   createBook(book: Book): Observable<any>{
-    return this.http.post<Book>(this.API_BOOK, book);
+    return this.http.post<any>(this.API_BOOK, book);
   }
   showAll(){
     return this.http.get(this.API_BOOK);
